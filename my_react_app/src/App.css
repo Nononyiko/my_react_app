@@ -1,38 +1,146 @@
-.App {
+:root {
+  --primary-color: #e312ce;
+  --primary-hover: #d700ba;
+  --background-color: #f0f8ff;
+  --text-color: #333;
+  --secondary-text: #666;
+  --border-color: #ccc;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.weather-app {
+  width: 360px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.date {
+  font-size: 16px;
+  color: var(--secondary-text);
+  margin-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-form button {
+  padding: 10px 16px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.search-form button:hover {
+  background-color: var(--primary-hover);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
+.current-weather h1 {
+  font-size: 48px;
+  color: var(--primary-hover);
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.description,
+.city,
+.wind {
+  font-size: 16px;
+  margin: 5px 0;
+  color: var(--text-color);
+}
+
+.weather-icon {
+  width: 80px;
+  margin-top: 10px;
+}
+
+.spinner {
+  width: 35px;
+  height: 35px;
+  border: 4px solid #e5e5e5;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
     transform: rotate(360deg);
   }
+}
+
+.forecast {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.weather-day {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 80px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.weather-day img {
+  width: 40px;
+  margin: 6px 0;
+}
+
+.day-name {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.day-temp {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+footer {
+  font-size: 12px;
+  color: #999;
+  margin-top: 20px;
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
