@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
   const [city, setCity] = useState("Pretoria");
   const [weather, setWeather] = useState(null);
-  const [forecast, setForecast] = useState([]);
+  
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
