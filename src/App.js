@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-  const [city, setCity] = useState("Pretoria");
+  const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
   
   const [loading, setLoading] = useState(false);

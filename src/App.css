@@ -33,8 +33,9 @@ body {
 .search-form {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  justify-content: center; /* 👈 ADD THIS */
 }
+
 
 .search-input {
   flex: 1;
@@ -94,13 +95,8 @@ body {
   }
 }
 
-.forecast {
-  margin-top: 20px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
+
 
 .weather-day {
   background-color: #f9f9f9;
