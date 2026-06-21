@@ -62,11 +62,11 @@ function App() {
       .catch(() => {
         setError("City not found. Please try again.");
         setWeather(null);
-        setForecast([]);
+        // no forecast state in this component
         setLoading(false);
       });
 
-    
+  }
 
   useEffect(() => {
     searchCity("Pretoria");
@@ -99,30 +99,27 @@ function App() {
 
       {error && <p className="error-message">{error}</p>}
 
+      <section className="current-weather">
+  {loading ? (
+    <div className="spinner"></div>
+  ) : weather ? (
+    <>
+      <h1>{Math.round(weather.temperature.current)}°C</h1>
+      <p>{weather.condition.description}</p>
+      <p>{weather.city}</p>
+      <p>Wind: {Math.round(weather.wind.speed)} km/h</p>
+
+      <img
+        src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weather.condition.icon}.png`}
+        alt={weather.condition.description}
+      />
+    </>
+  ) : (
+    <h1>--°C</h1>
+  )}
+</section>
+
       
-
-      <section className="forecast">
-        {forecast.map((day, index) => (
-          <div className="weather-day" key={index}>
-            <div className="day-name">
-              {new Date(day.time * 1000).toLocaleDateString("en-US", {
-                weekday: "short",
-              })}
-            </div>
-
-            <img
-              src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${day.condition.icon}.png`}
-              alt={day.condition.description}
-            />
-
-            <div className="day-temp">
-              {Math.round(day.temperature.maximum)}°C /{" "}
-              {Math.round(day.temperature.minimum)}°C
-            </div>
-          </div>
-        ))}
-      </section>
-
       <footer>
         Coded by{" "}
         <a
