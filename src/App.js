@@ -48,7 +48,7 @@ function App() {
 
     const currentUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=metric`;
 
-    const forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${cityName}&key=${apiKey}&units=metric`;
+   
 
     setLoading(true);
     setError("");
