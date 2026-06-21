@@ -99,32 +99,7 @@ function App() {
 
       {error && <p className="error-message">{error}</p>}
 
-      <section className="current-weather">
-        <h1>
-          {loading ? (
-            <div className="spinner"></div>
-          ) : weather ? (
-            `${Math.round(weather.temperature.current)}°C`
-          ) : (
-            "--°C"
-          )}
-        </h1>
-
-        {weather && (
-          <>
-            <p>{weather.condition.description}</p>
-
-            <p>{weather.city}</p>
-
-            <p>Wind: {Math.round(weather.wind.speed)} km/h</p>
-
-            <img
-              src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weather.condition.icon}.png`}
-              alt={weather.condition.description}
-            />
-          </>
-        )}
-      </section>
+      
 
       <section className="forecast">
         {forecast.map((day, index) => (
