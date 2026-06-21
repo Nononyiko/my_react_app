@@ -33,7 +33,7 @@ body {
 .search-form {
   display: flex;
   gap: 10px;
-  justify-content: center; /* 👈 ADD THIS */
+  justify-content: center;
 }
 
 
