@@ -66,15 +66,7 @@ function App() {
         setLoading(false);
       });
 
-    axios
-      .get(forecastUrl)
-      .then((response) => {
-        setForecast(response.data.daily.slice(1, 6));
-      })
-      .catch((error) => {
-        console.error("Forecast error:", error);
-      });
-  }
+    
 
   useEffect(() => {
     searchCity("Pretoria");
